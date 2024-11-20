@@ -11,7 +11,7 @@
 before run:
 1) run docker with command 
 > sudo docker run  --gpus all -it  --name develop_tensorflow --mount type=bind,source=<folder_path>,target=/Project -it tensorflow/tensorflow:1.14.0-gpu-py3
-2) sudo docker exec -it develop_tensorflow bash
+2) then run this command to do bash session inside container ``` sudo docker exec -it develop_tensorflow bash ```
 3) apt-get update
 4) apt install cmake
 5) then install according requirements.txt
