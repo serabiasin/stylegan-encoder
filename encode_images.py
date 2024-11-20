@@ -47,8 +47,10 @@ def main():
 
     # Initialize generator and perceptual model
     tflib.init_tf()
-    with dnnlib.util.open_url(URL_FFHQ, cache_dir=config.cache_dir) as f:
-        generator_network, discriminator_network, Gs_network = pickle.load(f)
+    # with dnnlib.util.open_url(URL_FFHQ, cache_dir=config.cache_dir) as f:
+    #     generator_network, discriminator_network, Gs_network = pickle.load(f)
+    with open("karras2019stylegan-ffhq-1024x1024.pkl", 'rb') as f:
+        generator_network, discriminator_network, Gs_network = pickle.load(f)    
 
     generator = Generator(Gs_network, args.batch_size, randomize_noise=args.randomize_noise)
     perceptual_model = PerceptualModel(args.image_size, layer=9, batch_size=args.batch_size)
