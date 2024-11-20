@@ -9,11 +9,12 @@
 *These people are real &ndash; latent representation of them was found by using perceptual loss trick. Then this representations were moved along "smiling direction" and transformed back into images*
 
 before run:
-0) run docker with command 
+1) run docker with command 
 > sudo docker run  --gpus all -it  --name develop_tensorflow --mount type=bind,source=<folder_path>,target=/Project -it tensorflow/tensorflow:1.14.0-gpu-py3
-1) apt-get update
-2) apt install cmake
-3) then install according requirements.txt
+2) sudo docker exec -it develop_tensorflow bash
+3) apt-get update
+4) apt install cmake
+5) then install according requirements.txt
 
 Short explanation of encoding approach:
 0) Original pre-trained StyleGAN generator is used for generating images
